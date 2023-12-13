@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #87CEEB; /* Sky blue background */
+    overflow: hidden;
+  }
+  
+  .dinosaur {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 150px;
+    background-image: url('dinosaur.png'); /* Replace 'dinosaur.png' with the actual image URL */
+    background-size: cover;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+    animation: cook 3s infinite;
+  }
+  
+  .dinosaur:hover {
+    animation: none; /* Stop cooking animation when the dinosaur is hovered */
+    transform: translateX(-50%) rotateY(180deg);
+  }
+  
+  .barbecue {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 50px;
+    background-color: #8B4513; /* Barbecue color (saddle brown) */
+    border-radius: 5px;
+  }
+  
+  @keyframes cook {
+    0%, 100% {
+      transform: translateX(-50%) rotate(0deg);
+    }
+    50% {
+      transform: translateX(-50%) rotate(10deg);
+    }
+  }
+  
